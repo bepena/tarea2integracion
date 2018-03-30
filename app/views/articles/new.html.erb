@@ -1,0 +1,21 @@
+<h1>Escribir Noticia</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+<%= form_for(@article) do |f| %>
+
+<%= f.label :title %> <br>
+<%= f.text_field :title %>
+<br><br>
+<%= f.label :subtitle %> <br>
+<%= f.text_area :subtitle %>
+<br><br>
+<%= f.label :body %> <br>
+<%= f.text_area :body%>
+<br> <br>
+<%= f.submit "Crear Noticia" %>
+
+<% end %>
+
+</div>
+</div>

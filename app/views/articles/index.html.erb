@@ -1,0 +1,8 @@
+<h1>La Estampa</h1>
+
+  <% articles = Article.all %>
+  <% articles.each do |article| %>
+<%= article.title %> : 
+<%= article.body %>
+<br>
+<%end%>
