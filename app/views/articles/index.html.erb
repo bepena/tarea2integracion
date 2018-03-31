@@ -1,8 +1,11 @@
 <h1>La Estampa</h1>
 
-  <% articles = Article.all %>
-  <% articles.each do |article| %>
-<%= article.title %> : 
-<%= article.body %>
-<br>
-<%end%>
+<% articles = Article.all %>
+<% articles.each do |article| %>
+  <%= article.title %> :
+  <%= article.body %>
+  <%= link_to 'Ver', article_path(article) %>
+  <br>
+  <%end%>
+
+  <%= link_to 'Admin', '/admin'%>
