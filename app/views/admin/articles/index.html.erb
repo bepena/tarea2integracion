@@ -1,14 +1,14 @@
 <h1>Administrador de Noticias</h1>
 
-<%= link_to 'Escribir Noticia', new_article_path %>
+<%= link_to 'Escribir Noticia', new_admin_article_path %>
 <br>
 <% articles = Article.all %>
 <% articles.each do |article| %>
 <%= article.title %> :
 <%= article.body %>
-<%= link_to 'Ver', article_path(article) %> |
-<%= link_to 'Editar', edit_article_path(article) %> |
-<%= link_to 'Eliminar', article_path(article),
+<%= link_to 'Ver', admin_article_path(article) %> |
+<%= link_to 'Editar', edit_admin_article_path(article) %> |
+<%= link_to 'Eliminar', admin_article_path(article),
 method: :delete,
 data: { confirm: 'Are you sure?' } %>
 <br>

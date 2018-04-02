@@ -1,6 +1,27 @@
-
+normal
 <h1><%= @article.title %></h1>
 <h3><%= @article.subtitle %></h3>
 <p><%= @article.body %></p>
 
-<%= link_to 'Atras', articles_path %>
+<h3>Comentarios</h3>
+<br>
+<% @article.comments.each do |c| %>
+<%= c.author %> :
+<%= c.content %>
+<br>
+<%end%>
+
+<br>
+Escribir comentario:
+
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |f|%>
+  <%= f.label :nombre %>
+  <%= f.text_field :author %>
+
+  <%= f.label :comentario %>
+  <%= f.text_field :content %>
+  <%= f.submit %>
+
+  <%end%>
+
+  <%= link_to 'Atras', articles_path %>
