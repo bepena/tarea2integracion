@@ -9,6 +9,15 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+def create
+  @article = Article.new(article_params)
+  if @article.save
+    redirect_to @article
+  else
+    render 'new'
+  end
+end
+
   def update
     @article = Article.find(params[:id])
     @article.update(article_params)
@@ -19,5 +28,5 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :subtitle, :body,
       comments_atributes: [:id, :_destroy])
   end
-  
+
 end
